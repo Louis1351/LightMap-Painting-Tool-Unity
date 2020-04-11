@@ -33,6 +33,11 @@ public class PaintTool : MonoBehaviour
     Color eraserColor;
 
     [SerializeField]
+    Color brushPreviewColor;
+    [SerializeField]
+    Color eraserPreviewColor;
+
+    [SerializeField]
     Texture2D brushTexture;
 
     [SerializeField]
@@ -71,6 +76,7 @@ public class PaintTool : MonoBehaviour
         activeBrush = true;
 
         currentPreview = Instantiate(preview);
+        currentPreview.GetComponent<MeshRenderer>().material.SetColor("_TintColor", brushPreviewColor);
         currentPreview.transform.localScale = Vector3.one * (brushSize + 0.3f * brushSize);
 
         ResetPainting();
@@ -82,13 +88,13 @@ public class PaintTool : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             activeBrush = true;
-
+            currentPreview.GetComponent<MeshRenderer>().material.SetColor("_TintColor", brushPreviewColor);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             activeBrush = false;
-
+            currentPreview.GetComponent<MeshRenderer>().material.SetColor("_TintColor", eraserPreviewColor);
         }
 
         if (activeBrush)
@@ -100,21 +106,11 @@ public class PaintTool : MonoBehaviour
     public void LateUpdate()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
         ActivePreview(ray);
 
         if (Input.GetMouseButton(0) && currentPreview.activeSelf)
         {
-            RaycastHit[] hits = Physics.RaycastAll(ray, distanceMaxToPaint);
-
-
-            foreach (RaycastHit hit in hits)
-            {
-                if (Vector3.Distance(h.point, hit.point) > 0.5f)
-                    continue;
-
-                DrawOnTexture(hit);
-            }
+            DrawOnTexture(h);
         }
     }
 
@@ -136,6 +132,7 @@ public class PaintTool : MonoBehaviour
         ID = _hit.transform.gameObject.GetInstanceID();
         currentRend = _hit.transform.GetComponent<Renderer>();
 
+        //Create a new Paint Texture if it doesn't exist
         if (!paintObjects.ContainsKey(ID))
         {
             Paint paint = new Paint((int)mappingResolution, (int)mappingResolution, initColors);
@@ -151,6 +148,7 @@ public class PaintTool : MonoBehaviour
                 oldSize = size;
 
                 size *= ratio;
+                //Set Temporary Texture to rescale
                 TextureScale.CopyTexture(activeBrush ? brushTexture : eraserTexture, ref tempBrush);
                 TextureScale.Bilinear(tempBrush, (int)(brushTexture.width * size), (int)(brushTexture.height * size));
 

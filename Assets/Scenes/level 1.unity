@@ -121,57 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &129057926
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 129057928}
-  - component: {fileID: 129057927}
-  m_Layer: 0
-  m_Name: '@paint tool'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &129057927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129057926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff8bcec7c873914a859aee69ecabc08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceMaxToPaint: 1000
-  preview: {fileID: 8803429914521898646, guid: ccf3e766f34844f429495fdb46bc10d9, type: 3}
-  brushSize: 1
-  eraserSize: 1
-  mappingResolution: 256
-  brushColor: {r: 1, g: 0, b: 0, a: 0}
-  brushTexture: {fileID: 2800000, guid: dfd1abc09372b604d878f55dba69b3e9, type: 3}
-  eraserTexture: {fileID: 2800000, guid: dfd1abc09372b604d878f55dba69b3e9, type: 3}
---- !u!4 &129057928
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129057926}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 14.07, z: 8.37}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &697287558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,3 +1046,72 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &3955955103476658059
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3955955103536507661, guid: a4d5e300086c6bf419fed979561ce489,
+        type: 3}
+      propertyPath: m_Name
+      value: '@paint tool'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955955103536507651, guid: a4d5e300086c6bf419fed979561ce489,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955955103536507651, guid: a4d5e300086c6bf419fed979561ce489,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955955103536507651, guid: a4d5e300086c6bf419fed979561ce489,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955955103536507651, guid: a4d5e300086c6bf419fed979561ce489,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955955103536507651, guid: a4d5e300086c6bf419fed979561ce489,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955955103536507651, guid: a4d5e300086c6bf419fed979561ce489,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955955103536507651, guid: a4d5e300086c6bf419fed979561ce489,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955955103536507651, guid: a4d5e300086c6bf419fed979561ce489,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955955103536507651, guid: a4d5e300086c6bf419fed979561ce489,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955955103536507651, guid: a4d5e300086c6bf419fed979561ce489,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955955103536507651, guid: a4d5e300086c6bf419fed979561ce489,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a4d5e300086c6bf419fed979561ce489, type: 3}
