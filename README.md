@@ -5,6 +5,9 @@
 # Change painting color<h3>
  Press B key
 ![To change Color](https://github.com/Louis1351/LightMap-Painting-Tool-Unity/blob/master/GIFs/Example1.gif)
+ 
+ # Change size brush<h3>
+![To change size](https://github.com/Louis1351/LightMap-Painting-Tool-Unity/blob/master/GIFs/Example3.gif)
 
 # Erase painting<h3>
  Press E key
